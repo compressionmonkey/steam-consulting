@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Consultancy - Tailor-Made Steam Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset some default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #007bb5, #00bcd4);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffdd57;
+        }
+
+        .hero {
+            background: url('images/hero-bg.jpg') no-repeat center center/cover;
+            color: #fff;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero h1, .hero p, .cta-button {
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background: #ffdd57;
+            color: #333;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #ffaa00;
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .about-section, .services-section, .case-studies-section, .blog-section, .testimonials-section, .contact-section {
+            text-align: center;
+        }
+
+        .team {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+        }
+
+        .team-member {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 100%;
+            border-radius: 50%;
+            max-width: 200px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            transition: transform 0.3s ease;
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+        }
+
+        .blog-section a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .blog-section a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input, textarea {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 100%;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #00bcd4;
+        }
+
+        button[type="submit"] {
+            background: #00bcd4;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background: #0288a7;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #007bb5;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .footer-content .social-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-content .social-links a:hover {
+            color: #ffdd57;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                text-align: left;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .team {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .cards-container .card {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">Steam Consultancy</div>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#case-studies">Case Studies</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Tailor-Made Steam Solutions for Energy Efficiency</h1>
+            <p>Innovative Steam Technology for the Energy Transition Landscape</p>
+            <a href="#contact" class="cta-button">Get a Free Consultation</a>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>We provide tailor-made steam solutions to help businesses transition towards energy-efficient heating systems. Our team of experts is committed to ensuring compliance with Dutch quality, safety, and environmental requirements.</p>
+        <h3>Our Team</h3>
+        <div class="team">
+            <div class="team-member">
+                <img src="https://via.placeholder.com/200" alt="Consultant">
+                <h4>John Doe</h4>
+                <p>Lead Steam Consultant</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/200" alt="Consultant">
+                <h4>Jane Smith</h4>
+                <p>Senior Engineer</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/200" alt="Consultant">
+                <h4>Michael Brown</h4>
+                <p>Energy Specialist</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <h2>Our Services</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>Steam Consulting</h3>
+                <p>Expert advice on leveraging steam technology for energy efficiency, tailored to meet your specific needs.</p>
+            </div>
+            <div class="card">
+                <h3>Heat Pump & Boiler Solutions</h3>
+                <p>Integration of heat pumps, electric boilers, steam boilers, and mechanical vapor compression systems for maximum efficiency.</p>
+            </div>
+            <div class="card">
+                <h3>Energy Transition Guidance</h3>
+                <p>Helping you navigate regulatory compliance, safety standards, and environmental requirements in the Netherlands.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="case-studies-section">
+        <h2>Case Studies</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>Project Alpha</h3>
+                <p>Objective: Transition from gas to steam-based heating. Solution: Implemented a high-efficiency steam boiler system, achieving a 30% reduction in energy costs.</p>
+            </div>
+            <div class="card">
+                <h3>Project Beta</h3>
+                <p>Objective: Improve compliance with new environmental regulations. Solution: Integrated heat pump and steam technologies to meet safety standards.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <h2>Knowledge Center</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>Benefits of Steam in Modern Energy Systems</h3>
+                <p>An overview of how steam technology can provide a viable alternative to gas in the energy transition.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="card">
+                <h3>Regulatory Compliance for Heat Systems in the Netherlands</h3>
+                <p>Understand the new regulations for heating systems and how our consultancy can help.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <h2>Testimonials</h2>
+        <div class="cards-container">
+            <div class="card">
+                <p>"Steam Consultancy helped us meet the new energy standards with ease. Highly recommend their tailor-made solutions!" - Jane Smith</p>
+            </div>
+            <div class="card">
+                <p>"Great expertise in steam systems, which made our energy transition seamless." - Company XYZ</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Ready to transition to an energy-efficient future? Contact us today!</p>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Steam Consultancy. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">LinkedIn</a> |
+                <a href="#">Twitter</a> |
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
